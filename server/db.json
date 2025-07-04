@@ -8,7 +8,9 @@
       "movie_description_es": "Evelyn, una inmigrante china en Estados Unidos, se ve envuelta en una aventura interdimensional donde debe salvar el multiverso conectando con las vidas que podría haber vivido.",
       "year": "2022",
       "genre": ["Adventure", "Comedy", "Sci-Fi"],
-      "image": "https://www.imdb.com/title/tt6710474/mediaviewer/rm316021249/?ref_=tt_ov_i"
+      "image": "https://www.imdb.com/title/tt6710474/mediaviewer/rm316021249/?ref_=tt_ov_i",
+      "status": "Pendiente",
+      "trailer": "https://www.youtube.com/watch?v=WLVHNjGlSJU"
     },
     {
       "id": "2",
@@ -17,7 +19,10 @@
       "director": "Joe Wright",
       "movie_description_es": "En la Inglaterra del siglo XIX, Elizabeth Bennet debe lidiar con temas de moralidad, educación y matrimonio mientras se enfrenta al orgulloso Sr. Darcy.",
       "year": "2005",
-      "genre": ["Drama", "Romance"]
+      "genre": ["Drama", "Romance"],
+      "image": "https://www.imdb.com/title/tt6710474/mediaviewer/rm316021249/?ref_=tt_ov_i",
+      "status": "Pendiente",
+      "trailer": "https://www.youtube.com/watch?v=WLVHNjGlSJU"
     },
     {
       "id": "3",
@@ -26,7 +31,10 @@
       "director": "David Fincher",
       "movie_description_es": "Cuando Amy desaparece el día de su aniversario, su esposo Nick se convierte en el principal sospechoso. Un thriller psicológico lleno de giros inesperados.",
       "year": "2014",
-      "genre": ["Thriller", "Drama", "Mystery"]
+      "genre": ["Thriller", "Drama", "Mystery"],
+      "image": "https://www.imdb.com/title/tt6710474/mediaviewer/rm316021249/?ref_=tt_ov_i",
+      "status": "Pendiente",
+      "trailer": "https://www.youtube.com/watch?v=WLVHNjGlSJU"
     },
     {
       "id": "4",
@@ -35,7 +43,10 @@
       "director": "Chris Buck, Kevin Lima",
       "movie_description_es": "Criado por gorilas en la selva africana, Tarzán debe decidir entre el mundo animal y el humano cuando conoce a Jane Porter.",
       "year": "1999",
-      "genre": ["Animation", "Adventure", "Family"]
+      "genre": ["Animation", "Adventure", "Family"],
+      "image": "https://www.imdb.com/title/tt6710474/mediaviewer/rm316021249/?ref_=tt_ov_i",
+      "status": "Pendiente",
+      "trailer": "https://www.youtube.com/watch?v=WLVHNjGlSJU"
     },
     {
       "id": "5",
@@ -44,7 +55,10 @@
       "director": "Michel Gondry",
       "movie_description_es": "Joel y Clementine se someten a un procedimiento para borrar los recuerdos de su relación, pero descubren que el amor verdadero es difícil de olvidar.",
       "year": "2004",
-      "genre": ["Drama", "Romance", "Sci-Fi"]
+      "genre": ["Drama", "Romance", "Sci-Fi"],
+      "image": "https://www.imdb.com/title/tt6710474/mediaviewer/rm316021249/?ref_=tt_ov_i",
+      "status": "Pendiente",
+      "trailer": "https://www.youtube.com/watch?v=WLVHNjGlSJU"
     },
     {
       "id": "6",
@@ -53,7 +67,10 @@
       "director": "Christopher Nolan",
       "movie_description_es": "Batman enfrenta al Joker, un criminal anárquico que siembra el caos en Gotham, obligando al héroe a cuestionar sus límites morales.",
       "year": "2008",
-      "genre": ["Action", "Crime", "Drama"]
+      "genre": ["Action", "Crime", "Drama"],
+      "image": "https://www.imdb.com/title/tt6710474/mediaviewer/rm316021249/?ref_=tt_ov_i",
+      "status": "Pendiente",
+      "trailer": "https://www.youtube.com/watch?v=WLVHNjGlSJU"
     },
     {
       "id": "7",
@@ -62,7 +79,10 @@
       "director": "Quentin Tarantino",
       "movie_description_es": "Django, un esclavo liberado, se une a un cazarrecompensas alemán para rescatar a su esposa de un brutal terrateniente sureño.",
       "year": "2012",
-      "genre": ["Western", "Drama", "Action"]
+      "genre": ["Western", "Drama", "Action"],
+      "image": "https://www.imdb.com/title/tt6710474/mediaviewer/rm316021249/?ref_=tt_ov_i",
+      "status": "Pendiente",
+      "trailer": "https://www.youtube.com/watch?v=WLVHNjGlSJU"
     },
     {
       "id": "8",
@@ -71,7 +91,10 @@
       "director": "Bong Joon-ho",
       "movie_description_es": "La familia Kim trama infiltrarse en la adinerada familia Park, desencadenando una serie de eventos inesperados en esta sátira social.",
       "year": "2019",
-      "genre": ["Thriller", "Drama", "Dark Comedy"]
+      "genre": ["Thriller", "Drama", "Dark Comedy"],
+      "image": "https://www.imdb.com/title/tt6710474/mediaviewer/rm316021249/?ref_=tt_ov_i",
+      "status": "Pendiente",
+      "trailer": "https://www.youtube.com/watch?v=WLVHNjGlSJU"
     }
   ]
 }
