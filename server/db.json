@@ -1,0 +1,77 @@
+{
+  "movies": [
+    {
+      "id": "1",
+      "title": "Everything Everywhere All at Once",
+      "title_es": "Todo en todas partes al mismo tiempo",
+      "director": "Daniel Kwan, Daniel Scheinert",
+      "movie_description_es": "Evelyn, una inmigrante china en Estados Unidos, se ve envuelta en una aventura interdimensional donde debe salvar el multiverso conectando con las vidas que podría haber vivido.",
+      "year": "2022",
+      "genre": ["Adventure", "Comedy", "Sci-Fi"],
+      "image": "https://www.imdb.com/title/tt6710474/mediaviewer/rm316021249/?ref_=tt_ov_i"
+    },
+    {
+      "id": "2",
+      "title": "Pride and Prejudice",
+      "title_es": "Orgullo y prejuicio",
+      "director": "Joe Wright",
+      "movie_description_es": "En la Inglaterra del siglo XIX, Elizabeth Bennet debe lidiar con temas de moralidad, educación y matrimonio mientras se enfrenta al orgulloso Sr. Darcy.",
+      "year": "2005",
+      "genre": ["Drama", "Romance"]
+    },
+    {
+      "id": "3",
+      "title": "Gone Girl",
+      "title_es": "Perdida",
+      "director": "David Fincher",
+      "movie_description_es": "Cuando Amy desaparece el día de su aniversario, su esposo Nick se convierte en el principal sospechoso. Un thriller psicológico lleno de giros inesperados.",
+      "year": "2014",
+      "genre": ["Thriller", "Drama", "Mystery"]
+    },
+    {
+      "id": "4",
+      "title": "Tarzan",
+      "title_es": "Tarzán",
+      "director": "Chris Buck, Kevin Lima",
+      "movie_description_es": "Criado por gorilas en la selva africana, Tarzán debe decidir entre el mundo animal y el humano cuando conoce a Jane Porter.",
+      "year": "1999",
+      "genre": ["Animation", "Adventure", "Family"]
+    },
+    {
+      "id": "5",
+      "title": "Eternal Sunshine of the Spotless Mind",
+      "title_es": "¡Olvídate de mí!",
+      "director": "Michel Gondry",
+      "movie_description_es": "Joel y Clementine se someten a un procedimiento para borrar los recuerdos de su relación, pero descubren que el amor verdadero es difícil de olvidar.",
+      "year": "2004",
+      "genre": ["Drama", "Romance", "Sci-Fi"]
+    },
+    {
+      "id": "6",
+      "title": "The Dark Knight",
+      "title_es": "El caballero oscuro",
+      "director": "Christopher Nolan",
+      "movie_description_es": "Batman enfrenta al Joker, un criminal anárquico que siembra el caos en Gotham, obligando al héroe a cuestionar sus límites morales.",
+      "year": "2008",
+      "genre": ["Action", "Crime", "Drama"]
+    },
+    {
+      "id": "7",
+      "title": "Django Unchained",
+      "title_es": "Django desencadenado",
+      "director": "Quentin Tarantino",
+      "movie_description_es": "Django, un esclavo liberado, se une a un cazarrecompensas alemán para rescatar a su esposa de un brutal terrateniente sureño.",
+      "year": "2012",
+      "genre": ["Western", "Drama", "Action"]
+    },
+    {
+      "id": "8",
+      "title": "Parasite",
+      "title_es": "Parásitos",
+      "director": "Bong Joon-ho",
+      "movie_description_es": "La familia Kim trama infiltrarse en la adinerada familia Park, desencadenando una serie de eventos inesperados en esta sátira social.",
+      "year": "2019",
+      "genre": ["Thriller", "Drama", "Dark Comedy"]
+    }
+  ]
+}
