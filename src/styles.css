@@ -9,7 +9,7 @@
   --white-text: #ffffff; /* Texto sobre botones oscuros */
   --milk-chocolate: #98551d; /* Iconos: flechas */
 
-    /* Botones */
+  /* Botones */
   --burnt-orange-primary: #ef6129; /* Botón principal (Añadir, Editar) */
   --golden-yellow-secondary: #f6b23e; /* Botón secundario (Ver todas) */
   --sunset-orange-accent: #ff841f; /* Hover / Acentos visuales */
@@ -45,7 +45,7 @@ body {
 }
 
 main {
-  padding: 2rem 5rem;
+  padding: 2rem 6rem;
 }
 
 section {
@@ -59,24 +59,90 @@ section {
   padding: 2rem;
   margin-bottom: 2.5rem;
 }
+.cartelera {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+  margin: 1.5rem 5rem 2rem 5rem;
+  padding: 1rem;
+  position: relative; /* Importante para posicionar el botón */
+}
 
-.botonera {
+.img-cartelera {
+  width: 90%;
+  aspect-ratio: 9/13;
+  object-fit: cover; /* Mantiene proporción y recorta si es necesario */
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.img-cartelera:hover {
+  transform: scale(1.05); /* Aumenta ligeramente el tamaño */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Sombra más pronunciada */
+}
+
+.btn-close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 30px;
+  height: 30px;
+  border: none;
+  border-radius: 50%;
+  background-color: var(--burnt-orange-primary);
+  color: var(--white-text);
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
   display: flex;
-  align-items: flex-end;
-  justify-content: space-evenly;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  z-index: 10;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.btn-close:hover {
+  background-color: var(--sunset-orange-accent);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.btn-close:active {
+  transform: scale(0.95);
 }
 
 /* 📝 Tipografía */
 .title {
   font-size: 2.8rem;
   margin-bottom: 0.5rem;
-  font-family: "Yesteryear", cursive;
+  font-family: "Yesteryear", serif;
   font-style: normal;
   color: var(--dusty-orange-title);
   text-align: center;
+  text-shadow: 0 4px 8px rgba(248, 240, 155, 0.3);
+}
+
+footer {
+  padding: 2rem 1rem;
+  text-align: center;
+  margin-top: auto; /* Empuja el footer hacia abajo */
+}
+.p-footer {
+  font-size: 0.7rem;
+  font-family: "Trirong", serif;
+  text-align: center;
+  color: var(--milk-chocolate);
+  margin: 0;
 }
 
 /* 🎮 Botones */
+.botonera {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-evenly;
+}
+
 .btn {
   font-size: 0.8rem;
   padding: 0.6rem 1.2rem;
@@ -143,4 +209,21 @@ section {
 }
 .g.dark-comedy {
   background-color: var(--blush-nude);
+}
+
+/* -----------RESPONSIVE------------- */
+
+/* Para pantallas más pequeñas */
+@media (max-width: 768px) {
+  .cartelera {
+    grid-template-columns: repeat(2, 1fr); /* 2 columnas en móviles */
+    gap: 1rem;
+  }
+}
+
+/* Para pantallas muy pequeñas */
+@media (max-width: 480px) {
+  .cartelera {
+    grid-template-columns: 1fr; /* 1 columna en pantallas muy pequeñas */
+  }
 }
