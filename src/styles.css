@@ -1,35 +1,146 @@
 :root {
-  /* 🎨 Fondos */
-  --smoke-white-bg: #f5f4f6;          /* Fondo general (página) */
-  --pure-white-block: #ffffff;        /* Bloques o tarjetas claras */
+  /* Fondos */
+  --vanilla-cream-bg: #fff4e0; /* Fondo general (página) */
+  --pure-white-block: #fefefe; /* Bloques o tarjetas claras */
 
-  /* 🔴 Colores principales */
-  --burnt-orange-primary: #c64d36;    /* Botón principal (Añadir, Editar) */
-  --golden-yellow-secondary: #ffbc1f; /* Botón secundario (Ver todas) */
-  --sunset-orange-accent: #ff841f;    /* Hover / Acentos visuales */
+  /* Tipografía e iconos */
+  --dusty-orange-title: #d95928; /* Título página */
+  --chocolate-brown-text: #483d3f; /* Texto principal (cuerpo) */
+  --white-text: #ffffff; /* Texto sobre botones oscuros */
+  --milk-chocolate: #98551d; /* Iconos: flechas */
 
-  /* 🖋 Tipografía e iconos */
-  --chocolate-brown-text: #483d3f;    /* Texto principal (títulos y cuerpo) */
-  --white-text: #ffffff;              /* Texto sobre botones oscuros */
-  --ash-purple-icon: #5d576b;         /* Iconos: flechas, cerrar */
+    /* Botones */
+  --burnt-orange-primary: #ef6129; /* Botón principal (Añadir, Editar) */
+  --golden-yellow-secondary: #f6b23e; /* Botón secundario (Ver todas) */
+  --sunset-orange-accent: #ff841f; /* Hover / Acentos visuales */
 
-  /* 🟡 Estados */
-  --soft-platinum-pending: #e0dde3;  /* Estado: Pendiente */
-  --warm-pearl-viewed: #eadcc4;      /* Estado: Vista */
+  /* Estados */
+  --soft-beige-pending: #ffead1; /* Estado: Pendiente */
+  --warm-pearl-viewed: #ffebb8; /* Estado: Vista */
 
-  /* 🍭 Géneros */
-  --coral-red: #e07a5f;              /* Genre 1 (Drama) */
-  --apricot-orange: #f4a261;         /* Genre 2 (Romance) */
-  --banana-yellow: #f6bd60;          /* Genre 3 (Comedia) */
-  --beige-blush: #f7ede2;            /* Genre 4 (Familiar) */
-  --plum-purple: #6d597a;            /* Genre 5 (Thriller) */
-  --dusty-rose: #b56576;             /* Genre 6 (Fantasía) */
-  --peach-pink: #ffb4a2;             /* Genre 7 (Animación) */
-  --blush-mauve: #e5989b;            /* Genre 8 (Misterio) */
-  --taupe-gray: #9a8c98;             /* Genre 9 (Documental) */
-  --sky-blue: #a9def9;               /* Genre 10 (Aventura) */
-  --mint-green: #caffbf;             /* Genre 11 (Musical) */
-  --creamy-peach: #ffd6a5;           /* Genre 12 (Biopic) */
-  --pastel-yellow: #fdffb6;          /* Genre 13 (Sci-fi) */
-  --lavender-lilac: #cdb4db;         /* Genre 14 (Western) */
+  /* Géneros */
+  --peach-blush: #fcbea7; /* Adventure */
+  --apricot-cream: #ffc8a3; /* Comedy */
+  --soft-rose: #f9dcd7; /* Sci-Fi */
+  --dusty-rose: #ffe7d0; /* Drama */
+  --petal-pink: #ffcaae; /* Romance */
+  --coral-haze: #f5c1bd; /* Thriller */
+  --vintage-pink: #f8b5ad; /* Mystery */
+  --sunset-salmon: #ffad92; /* Animation */
+  --sage-mist: #dbdbae; /* Family */
+  --buttery-yellow: #ffe8bc; /* Action */
+  --sky-glow: #e4f0f6; /* Crime */
+  --lavender-lilac: #f7ebff; /* Western */
+  --blush-nude: #f5cdca; /* Dark Comedy */
+}
+
+body {
+  background-color: var(--vanilla-cream-bg);
+  color: var(--chocolate-brown-text);
+  font-family: "Hind", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+main {
+  padding: 2rem 5rem;
+}
+
+section {
+  background-color: color-mix(
+    in srgb,
+    var(--pure-white-block) 70%,
+    transparent
+  );
+  backdrop-filter: blur(8px);
+  border-radius: 20px;
+  padding: 2rem;
+  margin-bottom: 2.5rem;
+}
+
+.botonera {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-evenly;
+}
+
+/* 📝 Tipografía */
+.title {
+  font-size: 2.8rem;
+  margin-bottom: 0.5rem;
+  font-family: "Yesteryear", cursive;
+  font-style: normal;
+  color: var(--dusty-orange-title);
+  text-align: center;
+}
+
+/* 🎮 Botones */
+.btn {
+  font-size: 0.8rem;
+  padding: 0.6rem 1.2rem;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: 0.2s ease;
+  font-weight: bold;
+  color: var(--white-text);
+}
+
+.btn-primary {
+  background-color: var(--burnt-orange-primary);
+}
+
+.btn-primary:hover {
+  background-color: var(--sunset-orange-accent);
+}
+
+.btn-secondary {
+  background-color: var(--golden-yellow-secondary);
+}
+
+.btn-secondary:hover {
+  background-color: var(--sunset-orange-accent);
+}
+
+/* Pastilla géneros */
+.g.adventure {
+  background-color: var(--peach-blush);
+}
+.g.comedy {
+  background-color: var(--apricot-cream);
+}
+.g.sci-fi {
+  background-color: var(--soft-rose);
+}
+.g.drama {
+  background-color: var(--dusty-rose);
+}
+.g.romance {
+  background-color: var(--petal-pink);
+}
+.g.thriller {
+  background-color: var(--coral-haze);
+}
+.g.mystery {
+  background-color: var(--vintage-pink);
+}
+.g.animation {
+  background-color: var(--sunset-salmon);
+}
+.g.family {
+  background-color: var(--sage-mist);
+}
+.g.action {
+  background-color: var(--buttery-yellow);
+}
+.g.crime {
+  background-color: var(--sky-glow);
+}
+.g.western {
+  background-color: var(--lavender-lilac);
+}
+.g.dark-comedy {
+  background-color: var(--blush-nude);
 }

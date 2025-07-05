@@ -1,14 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cine de verano</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Yesteryear&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Trirong:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Yesteryear&display=swap"
+        rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Hind:wght@300;400;500;600;700&family=Trirong:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Yesteryear&display=swap"
+        rel="stylesheet">
+    <title>🎬 Cine de verano 🍿</title>
 </head>
+
 <body>
-    <h1>Cine de verano</h1>
-    <button onclick="printMovies()">Cargar Info</button>
-    <section></section>
+    <header>
+        <h1 class="title">Cine de verano</h1>
+    </header>
+    <main>
+        <section>
+            <div>Carrusel pelis</div>
+            <div class="botonera">
+                <button class="btn btn-primary">Añadir película</button>
+                <button class="btn btn-secondary">Ver todas</button>
+            </div>
+        </section>
+        <section>
+            <div>detalle peli</div>
+            <div class="botonera">
+                <button class="btn btn-primary">Editar</button>
+                <button class="btn btn-secondary">Eliminar</button>
+            </div>
+        </section>
+        <section>
+            <div class="cartelera">
+                <img src="src/assets/images/movie_EverythingEverywhereAllAtOnce.png" alt="Everything Everywhere All At Once movie poster">
+                <img src="src/assets/images/movie_PrideandPrejudice.png" alt="Pride and Prejudice movie poster">
+                <img src="src/assets/images/movie_GoneGirl.png" alt="Gone Girl movie poster">
+                <img src="src/assets/images/movie_Tarzan.png" alt="Tarzan movie poster">
+                <img src="src/assets/images/movie_EternalSunshine.png" alt="Eternal Sunshine of the Spotless Mind movie poster">
+                <img src="src/assets/images/movie_TheDarkKnight.png" alt="The Dark Knight movie poster">
+                <img src="src/assets/images/movie_DjangoUnchained.png" alt="Django Unchained movie poster">
+                <img src="src/assets/images/movie_Parasite.png" alt="Parasite movie poster">
+            </div>
+            <div class="botonera">
+                <button class="btn btn-primary">Minimizar</button>
+            </div>
+        </section>
+    </main>
+    <!--<button class="btn" onclick="printMovies()">Cargar Info</button>-->
     <script src="../src/services.js"></script>
 </body>
+
 </html>
