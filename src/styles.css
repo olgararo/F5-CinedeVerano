@@ -1,10 +1,35 @@
-/*-------CSS HEX---------*/
 :root {
---verdigris: #3EB2B7ff;
---black-olive: #3E4539ff;
---hunyadi-yellow: #ECB855ff;
---pumpkin: #F3853Aff;
---coffee: #6E4939ff;
---chili-red: #EE3B28ff;
-}
+  /* 🎨 Fondos */
+  --smoke-white-bg: #f5f4f6;          /* Fondo general (página) */
+  --pure-white-block: #ffffff;        /* Bloques o tarjetas claras */
 
+  /* 🔴 Colores principales */
+  --burnt-orange-primary: #c64d36;    /* Botón principal (Añadir, Editar) */
+  --golden-yellow-secondary: #ffbc1f; /* Botón secundario (Ver todas) */
+  --sunset-orange-accent: #ff841f;    /* Hover / Acentos visuales */
+
+  /* 🖋 Tipografía e iconos */
+  --chocolate-brown-text: #483d3f;    /* Texto principal (títulos y cuerpo) */
+  --white-text: #ffffff;              /* Texto sobre botones oscuros */
+  --ash-purple-icon: #5d576b;         /* Iconos: flechas, cerrar */
+
+  /* 🟡 Estados */
+  --soft-platinum-pending: #e0dde3;  /* Estado: Pendiente */
+  --warm-pearl-viewed: #eadcc4;      /* Estado: Vista */
+
+  /* 🍭 Géneros */
+  --coral-red: #e07a5f;              /* Genre 1 (Drama) */
+  --apricot-orange: #f4a261;         /* Genre 2 (Romance) */
+  --banana-yellow: #f6bd60;          /* Genre 3 (Comedia) */
+  --beige-blush: #f7ede2;            /* Genre 4 (Familiar) */
+  --plum-purple: #6d597a;            /* Genre 5 (Thriller) */
+  --dusty-rose: #b56576;             /* Genre 6 (Fantasía) */
+  --peach-pink: #ffb4a2;             /* Genre 7 (Animación) */
+  --blush-mauve: #e5989b;            /* Genre 8 (Misterio) */
+  --taupe-gray: #9a8c98;             /* Genre 9 (Documental) */
+  --sky-blue: #a9def9;               /* Genre 10 (Aventura) */
+  --mint-green: #caffbf;             /* Genre 11 (Musical) */
+  --creamy-peach: #ffd6a5;           /* Genre 12 (Biopic) */
+  --pastel-yellow: #fdffb6;          /* Genre 13 (Sci-fi) */
+  --lavender-lilac: #cdb4db;         /* Genre 14 (Western) */
+}
