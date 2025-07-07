@@ -59,6 +59,11 @@ section {
   padding: 2rem;
   margin-bottom: 2.5rem;
 }
+
+#cartelera-section {
+  display: none;
+}
+
 .cartelera {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
