@@ -1,34 +1,19 @@
-// CREATE Método POST
-async function createMovie(newMovie) {
-  // pendiente de implementar
-}
-
 // READ Método GET 
 async function getMovies() {
-  const result = await fetch('http://localhost:3000/movies');
-  const data = await result.json();
-  return data;
+  const response = await fetch('http://localhost:3000/movies');
+  const moviedata = await response.json();
+  return moviedata;
 }
 
-// UPDATE Método PUT
-async function updateMovie(id, editedMovie) {
-  // pendiente de implementar
-}
-
-// DELETE Método DELETE
-async function deleteMovie(id) {
-  // pendiente de implementar
-}
 
 // IMPRIMIR
-let moviesContainer = document.querySelector('section');
+let moviesContainer = document.getElementById('cartelera');
 
 async function printMovies() {
   const movies = await getMovies();
-  const movieList = movies.map(movie => {
-    return moviesContainer.innerHTML += 
-    `<h1>${movie.title}</h1>
-    <p>${movie.genre}</p>`;
+  const movieList = movies.map((movie) => {
+    return (moviesContainer.innerHTML += 
+    `<img src="${movie.image}" alt="${movie.title} movie poster" class="img-cartelera">`);
   });
 
   return movieList;
