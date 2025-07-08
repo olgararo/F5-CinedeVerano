@@ -25,7 +25,7 @@
         <section>
             <div>Carrusel pelis</div>
             <div class="botonera">
-                <button class="btn btn-primary">Añadir película</button>
+                <button class="btn btn-primary" onclick="createMovie()">Añadir película</button>
                 <button class="btn btn-secondary" onclick="printMovies()">Ver todas</button>
             </div>
         </section>
@@ -36,8 +36,27 @@
                 <button class="btn btn-secondary">Eliminar</button>
             </div>
         </section>
+        <section>
+            <h2>Añade tu película</h2>
+            <button class="btn-close close" id="btn-close-cancel" aria-label="Cancelar añadir pelicula">✕</button>
+            <form id="movieForm">
+                <input type="text" id="title" placeholder="Nombre de película" required><br>
+                <input type="text" id="director" placeholder="Nombre del director"><br>
+                <input type="text" id="movie_description_es" placeholder="Descripción"><br>
+                <input type="text" id="year" placeholder="Año de estreno"><br>
+                <input type="text" id="genre" placeholder="Géneros"><br>
+                <input type="text" id="status" placeholder="Estado"><br>
+                <input type="url" id="trailer" placeholder="URL trailer" pattern="https://.*"><br>
+                <label for="movie-poster">Elige el póster de tu película:</label><br>
+                <input type="file" id="movie-poster" accept="image/png, image/jpeg"><br>
+            </form>
+            <div class="botonera">
+                <button class="btn btn-primary" id="btn-done">Hecho</button>
+            </div>
+        </section>
         <section id="cartelera-section">
             <button class="btn-close close" id="btn-close-top" aria-label="Cerrar cartelera">✕</button>
+            <h2>Cartelera</h2>
             <div class="cartelera" id="cartelera">
             </div>
             <div class="botonera">
