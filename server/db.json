@@ -178,14 +178,14 @@
       "trailer": ""
     },
     {
-      "id": "92d2",
       "title": "hfxhgchgc",
       "director": "",
       "movie_description_es": "",
       "year": "",
       "status": false,
       "image": "../src/assets/images/movie_placeholder.png",
-      "trailer": ""
+      "trailer": "",
+      "id": "92d2"
     }
   ]
 }
