@@ -249,7 +249,7 @@ function cleanModal() {
   document.getElementById("movie-form").reset();
 }
 
-// Cerrar modal al hacer clic fuera
+// Cerrar modal al hacer clic fuera del formulario
 window.onclick = function (event) {
   const modalDiv = document.getElementById("movie-modal");
   if (event.target == modalDiv) {
