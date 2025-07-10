@@ -30,3 +30,20 @@ btnCloseList.forEach((btnClose) => {
     });
   }
 });
+
+// Botón cancelar añadir película
+const btnCancelForm = document.getElementById("btn-close-cancel");
+if (btnCancelForm) {
+  btnCancelForm.addEventListener("click", function () {
+    document.getElementById("movieForm").reset();
+    console.log("Formulario cancelado");
+    const addMovieSection = document.getElementById("add-movie-section");
+    addMovieSection.style.display = "none";
+  });
+}
+
+// AÑADIR PELÍCULA
+function createMovie() {
+  const addMovieSection = document.getElementById("add-movie-section");
+  addMovieSection.style.display = "block";
+}

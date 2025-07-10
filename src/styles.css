@@ -60,6 +60,65 @@ section {
   margin-bottom: 2.5rem;
 }
 
+/*------------ Sección Añadir película: Formulario-----------*/
+#add-movie-section {
+  display: none;
+}
+
+#movieForm{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 20px;
+}
+
+.formContainer {
+  max-width: 600px;
+  margin: 0 auto;
+  background: var(--buttery-yellow);
+  padding: 40px;
+  margin: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.form-group label {
+  display: block;
+  margin-top: 10px;
+  margin-bottom: 6px;
+  color: #555;
+  font-weight: 500;
+  font-size: 16px;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 16px;
+  transition: border-color 0.3s ease;
+  background: #fff;
+}
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+  outline: none;
+  border-color:  var(--milk-chocolate);
+  box-shadow: 0 0 0 2px rgba(255, 140, 0, 0.15);
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+
+
+/* ------------------ Sección Cartelera -------------------- */
 #cartelera-section {
   display: none;
 }
@@ -83,38 +142,8 @@ section {
 }
 
 .img-cartelera:hover {
-  transform: scale(1.05); /* Aumenta ligeramente el tamaño */
+  transform: scale(1.05); /* Aumenta un poquito el tamaño */
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Sombra más pronunciada */
-}
-
-.btn-close {
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  width: 30px;
-  height: 30px;
-  border: none;
-  border-radius: 50%;
-  background-color: var(--burnt-orange-primary);
-  color: var(--white-text);
-  font-size: 16px;
-  font-weight: bold;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: all 0.3s ease;
-  z-index: 10;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
-}
-
-.btn-close:hover {
-  background-color: var(--sunset-orange-accent);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-}
-
-.btn-close:active {
-  transform: scale(0.95);
 }
 
 /* 📝 Tipografía */
@@ -153,11 +182,12 @@ footer {
   margin: 0;
 }
 
-/* 🎮 Botones */
+/* ------------------🎮 Botones-------------------- */
 .botonera {
   display: flex;
   align-items: flex-end;
   justify-content: space-evenly;
+  padding: 3rem 1rem 1rem 1rem;
 }
 
 .btn {
@@ -188,46 +218,36 @@ footer {
   background-color: var(--sunset-orange-accent);
 }
 
-/* Pastilla géneros */
-.g.adventure {
-  background-color: var(--peach-blush);
+.btn-close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 30px;
+  height: 30px;
+  border: none;
+  border-radius: 50%;
+  background-color: var(--burnt-orange-primary);
+  color: var(--white-text);
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  z-index: 10;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
 }
-.g.comedy {
-  background-color: var(--apricot-cream);
+
+.btn-close:hover {
+  background-color: var(--sunset-orange-accent);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
-.g.sci-fi {
-  background-color: var(--soft-rose);
+
+.btn-close:active {
+  transform: scale(0.95);
 }
-.g.drama {
-  background-color: var(--dusty-rose);
-}
-.g.romance {
-  background-color: var(--petal-pink);
-}
-.g.thriller {
-  background-color: var(--coral-haze);
-}
-.g.mystery {
-  background-color: var(--vintage-pink);
-}
-.g.animation {
-  background-color: var(--sunset-salmon);
-}
-.g.family {
-  background-color: var(--sage-mist);
-}
-.g.action {
-  background-color: var(--buttery-yellow);
-}
-.g.crime {
-  background-color: var(--sky-glow);
-}
-.g.western {
-  background-color: var(--lavender-lilac);
-}
-.g.dark-comedy {
-  background-color: var(--blush-nude);
-}
+
 
 /* -----------RESPONSIVE------------- */
 
@@ -243,5 +263,12 @@ footer {
 @media (max-width: 480px) {
   .cartelera {
     grid-template-columns: 1fr; /* 1 columna en pantallas muy pequeñas */
+  }
+}
+
+@media (max-width: 600px) {
+  .formContainer {
+    padding: 30px 20px;
+    margin: 0 10px;
   }
 }
