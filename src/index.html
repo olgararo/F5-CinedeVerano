@@ -26,60 +26,9 @@
             </div>
         </section>
         <!-- modal EDITAR PELÍCULA -->
-        <div id="edit-movie-modal" class="modal">
+        <div id="movie-modal" class="modal">
             <div class="modal-content">
                 <button class="btn-close" id="btn-close-cancel" aria-label="Cancelar editar pelicula"
-                    onclick="closeEditModal()">✕</button>
-                <h2>Añade tu película</h2>
-                <form id="movie-form">
-                    <div class="formContainer">
-                        <div class="form-group">
-                            <label for="title">Nombre de película *</label>
-                            <input type="text" id="title" placeholder="ej. Titanic" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="director">Director</label>
-                            <input type="text" id="director" placeholder="Ej. James Cameron">
-                        </div>
-                        <div class="form-group">
-                            <label for="movie_description_es">Descripción</label>
-                            <textarea id="movie_description_es" placeholder="¿De qué va la peli?"></textarea>
-                        </div>
-                        <div class="form-group">
-                            <label for="year">Año de estreno</label>
-                            <input type="number" id="year" placeholder="1901" min="1900" max="2025">
-                        </div>
-                        <div class="form-group">
-                            <label for="status">Estado</label>
-                            <select id="status">
-                                <option value="">Selecciona un estado</option>
-                                <option value="pendiente">Pendiente</option>
-                                <option value="visto">Visto</option>
-                                <option value="favorito">Favorito</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label for="movie-poster">URL del póster</label>
-                            <input type="url" id="movie-poster" placeholder="https://images.google.com/..."
-                                pattern="https://.*">
-                        </div>
-                        <div class="form-group">
-                            <label for="movie-trailer">URL del tráiler</label>
-                            <input type="url" id="movie-trailer" placeholder="https://youtube.com/watch?v=..."
-                                pattern="https://.*">
-                        </div>
-                        <div class="botonera">
-                            <button type="submit" class="btn btn-primary" id="btn-save-changes">Guardar cambios</button>
-                            <button class="btn btn-secondary" onclick="cleanEditModal()">Limpiar</button>
-                        </div>
-                    </div>
-                </form>
-            </div>
-        </div>
-        <!-- modal AÑADIR PELÍCULA -->
-        <div id="add-movie-modal" class="modal">
-            <div class="modal-content">
-                <button class="btn-close" id="btn-close-cancel" aria-label="Cancelar añadir pelicula"
                     onclick="closeModal()">✕</button>
                 <h2>Añade tu película</h2>
                 <form id="movie-form">
@@ -120,7 +69,8 @@
                                 pattern="https://.*">
                         </div>
                         <div class="botonera">
-                            <button type="submit" class="btn btn-primary" id="btn-save-new">Guardar película</button>
+                            <button type="submit" class="btn btn-primary" id="btn-save">Guardar</button>
+                            <button class="btn btn-secondary" onclick="cleanModal()">Limpiar</button>
                         </div>
                     </div>
                 </form>

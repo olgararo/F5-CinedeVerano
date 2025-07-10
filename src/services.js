@@ -16,22 +16,22 @@ async function printMovies() {
   const movies = await getMovies();
   carteleraSection.style.display = "block";
   moviesContainer.innerHTML = "";
-  
-  movies.forEach(movie => {
-    const movieImg = document.createElement('img');
+
+  movies.forEach((movie) => {
+    const movieImg = document.createElement("img");
     movieImg.src = movie.image;
     movieImg.alt = `${movie.title} movie poster`;
-    movieImg.className = 'img-cartelera';
-    movieImg.style.cursor = 'pointer';
-    
+    movieImg.className = "img-cartelera";
+    movieImg.style.cursor = "pointer";
+
     // Agregar evento click a cada imagen
-    movieImg.addEventListener('click', () => {
+    movieImg.addEventListener("click", () => {
       showMovieInfo(movie);
     });
-    
+
     moviesContainer.appendChild(movieImg);
   });
-  
+
   carteleraSection.scrollIntoView({ behavior: "smooth" }); //Scroll automático a la cartelera
 }
 
@@ -39,34 +39,52 @@ async function printMovies() {
 function showMovieInfo(movie) {
   selectedMovie = movie;
   const movieInfoSection = document.getElementById("movie-info");
-  const movieDetailsDiv = document.getElementById("movie-details")
-  
+  const movieDetailsDiv = document.getElementById("movie-details");
+
   // Ocultar cartelera
   carteleraSection.style.display = "none";
-  
+
   // Crear el contenido de la película
   const movieDetails = `
     <div class="movie-details">
       <div class="movie-header">
-        <img src="${movie.image}" alt="${movie.title} poster" class="movie-poster-detail">
+        <img src="${movie.image}" alt="${
+    movie.title
+  } poster" class="movie-poster-detail">
         <div class="movie-info-text">
           <h2>${movie.title}</h2>
-          ${movie.title_es ? `<h3>${movie.title_es}</h3>` : ''}
-          <p><strong>Director:</strong> ${movie.director || 'No especificado'}</p>
-          <p><strong>Año:</strong> ${movie.year || 'No especificado'}</p>
-          <p><strong>Estado:</strong> ${movie.status ? 'Visto' : 'Pendiente'}</p>
-          ${movie.genre ? `<p><strong>Género:</strong> ${movie.genre.join(', ')}</p>` : ''}
+          ${movie.title_es ? `<h3>${movie.title_es}</h3>` : ""}
+          <p><strong>Director:</strong> ${
+            movie.director || "No especificado"
+          }</p>
+          <p><strong>Año:</strong> ${movie.year || "No especificado"}</p>
+          <p><strong>Estado:</strong> ${
+            movie.status ? "Visto" : "Pendiente"
+          }</p>
+          ${
+            movie.genre
+              ? `<p><strong>Género:</strong> ${movie.genre.join(", ")}</p>`
+              : ""
+          }
         </div>
       </div>
-      ${movie.movie_description_es ? `<div class="movie-description"><p><strong>Descripción:</strong> ${movie.movie_description_es}</p></div>` : ''}
-      ${movie.trailer ? `<div class="movie-trailer"><p><strong>Tráiler:</strong> <a href="${movie.trailer}" target="_blank">Ver tráiler</a></p></div>` : ''}
+      ${
+        movie.movie_description_es
+          ? `<div class="movie-description"><p><strong>Descripción:</strong> ${movie.movie_description_es}</p></div>`
+          : ""
+      }
+      ${
+        movie.trailer
+          ? `<div class="movie-trailer"><p><strong>Tráiler:</strong> <a href="${movie.trailer}" target="_blank">Ver tráiler</a></p></div>`
+          : ""
+      }
     </div>
   `;
   //el interrogante de L57 y L61 es un operador de If...else=> condición ? valor_si_verdadero : valor_si_falso
 
   // Reemplazar el contenido placeholder
   movieDetailsDiv.innerHTML = movieDetails;
-  
+
   // Mostrar la sección
   movieInfoSection.style.display = "block";
   movieInfoSection.scrollIntoView({ behavior: "smooth" });
@@ -81,23 +99,26 @@ function closeMovieInfo() {
 // Función para editar película
 function editMovie() {
   if (!selectedMovie) return;
-  
+
   // Prellenar el formulario con los datos de la película
-  document.getElementById('title').value = selectedMovie.title || '';
-  document.getElementById('director').value = selectedMovie.director || '';
-  document.getElementById('movie_description_es').value = selectedMovie.movie_description_es || '';
-  document.getElementById('year').value = selectedMovie.year || '';
-  document.getElementById('status').value = selectedMovie.status ? 'visto' : 'pendiente';
-  document.getElementById('movie-poster').value = selectedMovie.image || '';
-  document.getElementById('movie-trailer').value = selectedMovie.trailer || '';
-  
+  document.getElementById("title").value = selectedMovie.title || "";
+  document.getElementById("director").value = selectedMovie.director || "";
+  document.getElementById("movie_description_es").value =
+    selectedMovie.movie_description_es || "";
+  document.getElementById("year").value = selectedMovie.year || "";
+  document.getElementById("status").value = selectedMovie.status
+    ? "visto"
+    : "pendiente";
+  document.getElementById("movie-poster").value = selectedMovie.image || "";
+  document.getElementById("movie-trailer").value = selectedMovie.trailer || "";
+
   // Cambiar el modal a modo edición
-  const modal = document.getElementById("edit-movie-modal");
-  const modalTitle = modal.querySelector('h2');
+  const modal = document.getElementById("movie-modal");
+  const modalTitle = modal.querySelector("h2");
   if (modalTitle) {
     modalTitle.textContent = "Editar película";
   }
-  
+
   // Mostrar el modal de edición
   modal.style.display = "block";
 }
@@ -105,23 +126,28 @@ function editMovie() {
 // Función para eliminar película
 async function deleteMovie() {
   if (!selectedMovie) return;
-  
-  if (confirm(`¿Estás seguro de que quieres eliminar "${selectedMovie.title}"?`)) {
+
+  if (
+    confirm(`¿Estás seguro de que quieres eliminar "${selectedMovie.title}"?`)
+  ) {
     try {
-      const response = await fetch(`http://localhost:3000/movies/${selectedMovie.id}`, {
-        method: 'DELETE'
-      });
-      
+      const response = await fetch(
+        `http://localhost:3000/movies/${selectedMovie.id}`,
+        {
+          method: "DELETE",
+        }
+      );
+
       if (response.ok) {
-        alert('Película eliminada correctamente');
+        alert("Película eliminada correctamente");
         closeMovieInfo();
         printMovies(); // Recargar la cartelera
       } else {
-        alert('Error al eliminar la película');
+        alert("Error al eliminar la película");
       }
     } catch (error) {
-      console.error('Error:', error);
-      alert('Error de conexión');
+      console.error("Error:", error);
+      alert("Error de conexión");
     }
   }
 }
@@ -143,7 +169,7 @@ if (btnCancelForm) {
   btnCancelForm.addEventListener("click", function () {
     document.getElementById("movie-form").reset();
     console.log("Formulario cancelado");
-    const addMovieModal = document.getElementById("add-movie-modal");
+    const addMovieModal = document.getElementById("movie-modal");
     addMovieModal.style.display = "none";
   });
 }
@@ -153,80 +179,85 @@ function createMovie() {
   openModal(); // Llama a la función existente para abrir el modal
 }
 
-document.getElementById('movie-form').addEventListener('submit', async function(e) {
+document
+  .getElementById("movie-form")
+  .addEventListener("submit", async function (e) {
     e.preventDefault();
-    
+
     // Recopilar datos del formulario
     const movieData = {
-        title: document.getElementById('title').value,
-        director: document.getElementById('director').value,
-        movie_description_es: document.getElementById('movie_description_es').value,
-        year: document.getElementById('year').value,
-        status: document.getElementById('status').value === 'visto', // convertir a booleano
-        image: document.getElementById('movie-poster').value || '../src/assets/images/movie_placeholder.png',
-        trailer: document.getElementById('movie-trailer').value
+      title: document.getElementById("title").value,
+      director: document.getElementById("director").value,
+      movie_description_es: document.getElementById("movie_description_es")
+        .value,
+      year: document.getElementById("year").value,
+      status: document.getElementById("status").value === "visto", // convertir a booleano
+      image:
+        document.getElementById("movie-poster").value ||
+        "../src/assets/images/movie_placeholder.png",
+      trailer: document.getElementById("movie-trailer").value,
     };
-    
+
     try {
-        // Determinar si es una actualización o creación nueva
-        const isEditing = selectedMovie !== null;
-        const url = isEditing ? `http://localhost:3000/movies/${selectedMovie.id}` : 'http://localhost:3000/movies';
-        const method = isEditing ? 'PUT' : 'POST';
-        
-        const response = await fetch(url, {
-            method: method,
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify(movieData)
-        });
-        
-        if (response.ok) {
-            alert(isEditing ? 'Película actualizada correctamente' : 'Película añadida correctamente');
-            closeModal();
-            closeEditModal();
-            closeMovieInfo();
-            printMovies(); // Recargar la cartelera
-        } else {
-            alert(isEditing ? 'Error al actualizar la película' : 'Error al añadir la película');
-        }
+      // Determinar si es una actualización o creación nueva
+      const isEditing = selectedMovie !== null;
+      const url = isEditing
+        ? `http://localhost:3000/movies/${selectedMovie.id}`
+        : "http://localhost:3000/movies";
+      const method = isEditing ? "PUT" : "POST";
+
+      const response = await fetch(url, {
+        method: method,
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(movieData),
+      });
+
+      if (response.ok) {
+        alert(
+          isEditing
+            ? "Película actualizada correctamente"
+            : "Película añadida correctamente"
+        );
+        closeModal();
+        closeMovieInfo();
+        printMovies(); // Recargar la cartelera
+      } else {
+        alert(
+          isEditing
+            ? "Error al actualizar la película"
+            : "Error al añadir la película"
+        );
+      }
     } catch (error) {
-        console.error('Error:', error);
-        alert('Error de conexión');
+      console.error("Error:", error);
+      alert("Error de conexión");
     }
-});
+  });
 
 // MODAL FUNCIONES
 function openModal() {
-  document.getElementById("add-movie-modal").style.display = "block";
+  document.getElementById("movie-modal").style.display = "block";
 }
 
 function closeModal() {
-  document.getElementById("add-movie-modal").style.display = "none";
-  document.getElementById("movie-form").reset();
+  document.getElementById("movie-modal").style.display = "none";
 }
 
-function closeEditModal() {
-  document.getElementById("edit-movie-modal").style.display = "none";
-}
-
-function cleanEditModal() {
+function cleanModal() {
   document.getElementById("movie-form").reset();
 }
 
 // Cerrar modal al hacer clic fuera
 window.onclick = function (event) {
-  const addModal = document.getElementById("add-movie-modal");
-  const editModal = document.getElementById("edit-movie-modal");
-  
-  if (event.target == addModal) {
+  const modalDiv = document.getElementById("movie-modal");
+  if (event.target == modalDiv) {
     closeModal();
-  } else if (event.target == editModal) {
-    closeEditModal();
   }
 };
 
 // Ocultar sección movie-info por defecto
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener("DOMContentLoaded", function () {
   document.getElementById("movie-info").style.display = "none";
 });

@@ -129,9 +129,9 @@
     },
     {
       "title": "peli",
-      "director": "",
-      "movie_description_es": "",
-      "year": "",
+      "director": "xvcvvfdgsrgergeagergeargerger",
+      "movie_description_es": "dfgdfgdfgfd",
+      "year": "2011",
       "status": false,
       "image": "../src/assets/images/movie_placeholder.png",
       "trailer": "",
@@ -146,6 +146,26 @@
       "image": "https://cinemabravo.com/wp-content/uploads/2025/07/superman-movie-poster.jpg",
       "trailer": "",
       "id": "d653"
+    },
+    {
+      "id": "a964",
+      "title": "peli super nueva",
+      "director": "sdfsdf",
+      "movie_description_es": "",
+      "year": "1904",
+      "status": false,
+      "image": "../src/assets/images/movie_placeholder.png",
+      "trailer": ""
+    },
+    {
+      "id": "c64b",
+      "title": "fhdshdgfh",
+      "director": "",
+      "movie_description_es": "",
+      "year": "",
+      "status": false,
+      "image": "../src/assets/images/movie_placeholder.png",
+      "trailer": ""
     }
   ]
 }
