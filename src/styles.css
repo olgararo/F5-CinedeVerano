@@ -5,7 +5,7 @@
 
   /* Tipografía e iconos */
   --dusty-orange-title: #d95928; /* Título página */
-  --chocolate-brown-text: #4a3a3d; /* Texto principal (cuerpo) */
+  --chocolate-brown-text: #522c0e; /* Texto principal (cuerpo) */
   --white-text: #ffffff; /* Texto sobre botones oscuros */
   --milk-chocolate: #98551d; /* Iconos: flechas */
 
@@ -60,6 +60,42 @@ section {
   margin-bottom: 2.5rem;
 }
 
+/* 📝 Tipografía */
+.title {
+  font-size: 4.8rem;
+  margin-bottom: 0.5rem;
+  font-family: "Yesteryear", serif;
+  font-style: normal;
+  color: var(--dusty-orange-title);
+  text-align: center;
+  text-shadow: 0 4px 8px rgba(248, 240, 155, 0.3);
+}
+
+h2 {
+  font-size: 2.5rem;
+  font-family: "Bodoni Moda", serif;
+  font-style: normal;
+  color: var(--dusty-orange-title);
+  text-align: center;
+  text-shadow: 0 4px 8px rgba(248, 240, 155, 0.3);
+  margin: 0 0 1rem 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+footer {
+  padding: 2rem 1rem;
+  text-align: center;
+  margin-top: auto; /* Empuja el footer hacia abajo */
+}
+.p-footer {
+  font-size: 0.7rem;
+  font-family: "Bodoni Moda", serif;
+  text-align: center;
+  color: var(--milk-chocolate);
+  margin: 0;
+}
+
 /*------------ Sección Añadir película: Formulario-----------*/
 
 .modal {
@@ -75,7 +111,7 @@ section {
 }
 
 .modal-content {
-  background: var(--buttery-yellow);
+  background: var(--vanilla-cream-bg);
   margin: 5% auto;
   padding: 30px;
   border-radius: 20px;
@@ -87,10 +123,25 @@ section {
   overflow-y: auto;
 }
 
+.modal-content h2 {
+  font-size: 2rem;
+  font-family: "Bodoni Moda", serif;
+  font-style: normal;
+  color: var(--dusty-orange-title);
+  text-align: center;
+  text-shadow: 0 4px 8px rgba(238, 238, 232, 0.3);
+  margin: 0 0 1rem 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 .formContainer {
   max-width: 600px;
   margin: 0 auto;
-  background: white;
+  background: color-mix(
+    in srgb,
+    var(--pure-white-block) 70%,
+    transparent);
   padding: 40px;
   border-radius: 8px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
@@ -138,7 +189,9 @@ section {
 /* ------------------ Sección Cartelera -------------------- */
 
 #cartelera-section {
+  margin: 0 auto; /* centra horizontalmente el bloque dentro del main*/
   display: none;
+  max-width: 1000px;
 }
 
 .cartelera {
@@ -164,41 +217,81 @@ section {
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Sombra más pronunciada */
 }
 
-/* 📝 Tipografía */
-.title {
-  font-size: 4.8rem;
-  margin-bottom: 0.5rem;
-  font-family: "Yesteryear", serif;
-  font-style: normal;
-  color: var(--dusty-orange-title);
-  text-align: center;
-  text-shadow: 0 4px 8px rgba(248, 240, 155, 0.3);
+
+/* ---------Sección movie-info ------------*/
+#movie-info {
+  margin: 0 auto; /* centra horizontalmente el bloque dentro del main*/
+  display: none; /* Oculta por defecto */
+  max-width: 600px;
+  
 }
 
-h2 {
-  font-size: 1.5rem;
-  font-family: "Trirong", serif;
-  font-style: normal;
+.movie-details {
+  border-radius: 12px;
+  padding: 2rem;
+}
+
+.movie-header {
+  display: flex;
+  gap: 2rem;
+  margin-bottom: 1.5rem;
+  align-items: flex-start;
+}
+
+.movie-poster-detail {
+  width: 200px;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  flex-shrink: 0;
+}
+
+.movie-info-text {
+  flex: 1;
+}
+
+.movie-info-text h2 {
+  margin: 0 0 0.5rem 0;
+  font-size: 2rem;
   color: var(--dusty-orange-title);
-  text-align: center;
-  text-shadow: 0 4px 8px rgba(248, 240, 155, 0.3);
+}
+
+.movie-info-text h3 {
   margin: 0 0 1rem 0;
-  padding: 0;
-  box-sizing: border-box;
+  font-size: 1.5rem;
+  color: var(--chocolate-brown-text);
+  font-style: italic;
+  text-align: center;
 }
 
-footer {
-  padding: 2rem 1rem;
-  text-align: center;
-  margin-top: auto; /* Empuja el footer hacia abajo */
+.movie-info-text p {
+  margin: 0.5rem 0;
+  line-height: 1.6;
+  color: var(--chocolate-brown-text)
 }
-.p-footer {
-  font-size: 0.7rem;
-  font-family: "Trirong", serif;
-  text-align: center;
-  color: var(--milk-chocolate);
-  margin: 0;
+
+.movie-description {
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid #eee;
 }
+
+.movie-trailer {
+  margin-top: 1rem;
+}
+
+.movie-trailer a {
+  color: var(--burnt-orange-primary);
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.movie-trailer a:hover {
+  color: var(--sunset-orange-accent);
+  text-decoration: underline;
+}
+
+
 
 /* ------------------🎮 Botones-------------------- */
 .botonera {
@@ -266,6 +359,7 @@ footer {
   transform: scale(0.95);
 }
 
+
 /* -----------RESPONSIVE------------- */
 
 /* Para pantallas más pequeñas */
@@ -287,5 +381,26 @@ footer {
   .formContainer {
     padding: 30px 20px;
     margin: 0 10px;
+  }
+}
+
+/* Responsive para movie-info */
+@media (max-width: 768px) {
+  .movie-header {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .movie-poster-detail {
+    width: 150px;
+  }
+  
+  .movie-info-text h2 {
+    font-size: 1.5rem;
+  }
+  
+  .movie-info-text h3 {
+    font-size: 1.2rem;
   }
 }

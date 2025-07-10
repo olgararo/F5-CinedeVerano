@@ -128,74 +128,24 @@
       "trailer": "https://youtu.be/5xH0HfJHsaY?si=v-TuQQS2aPBPhfZL"
     },
     {
-      "id": "2700",
-      "title": "kjkhjk",
+      "title": "peli",
       "director": "",
       "movie_description_es": "",
       "year": "",
       "status": false,
       "image": "../src/assets/images/movie_placeholder.png",
-      "trailer": ""
+      "trailer": "",
+      "id": "2700"
     },
     {
-      "id": "2ac5",
-      "title": "Scary Movie",
-      "director": "nose",
-      "movie_description_es": "",
-      "year": "2000",
-      "status": false,
-      "image": "src/assets/images/movie_placeholder.png",
-      "trailer": ""
-    },
-    {
-      "id": "6be7",
-      "title": "gru",
-      "director": "gdfgfdg",
-      "movie_description_es": "",
-      "year": "",
-      "status": false,
-      "image": "../assets/images/movie_placeholder.png",
-      "trailer": ""
-    },
-    {
-      "id": "53ab",
-      "title": "gtgregr",
-      "director": "",
-      "movie_description_es": "",
-      "year": "",
-      "status": false,
-      "image": "../assets/images/movie_placeholder.png",
-      "trailer": ""
-    },
-    {
-      "id": "2c6e",
-      "title": "fdsgdsfgfg",
-      "director": "",
-      "movie_description_es": "",
-      "year": "",
-      "status": false,
-      "image": "/src/assets/images/movie_placeholder.png",
-      "trailer": ""
-    },
-    {
-      "id": "4412",
-      "title": "dweewdee",
-      "director": "",
-      "movie_description_es": "",
-      "year": "",
-      "status": false,
-      "image": "./src/assets/images/movie_placeholder.png",
-      "trailer": ""
-    },
-    {
-      "id": "d653",
-      "title": "pruebaplaceholer",
+      "title": "Superman",
       "director": "asdsds",
       "movie_description_es": "",
-      "year": "",
+      "year": "2025",
       "status": false,
-      "image": "../src/assets/images/movie_placeholder.png",
-      "trailer": ""
+      "image": "https://cinemabravo.com/wp-content/uploads/2025/07/superman-movie-poster.jpg",
+      "trailer": "",
+      "id": "d653"
     }
   ]
 }
