@@ -176,6 +176,7 @@ if (btnCancelForm) {
 
 // AÑADIR PELÍCULA
 function createMovie() {
+  cleanModal(); //Limpiar el formulario
   openModal(); // Llama a la función existente para abrir el modal
 }
 
@@ -193,7 +194,7 @@ document
       year: document.getElementById("year").value,
       status: document.getElementById("status").value === "visto", // convertir a booleano
       image:
-        document.getElementById("movie-poster").value ||
+        document.getElementById("movie-poster").value || // imagen placeholder si no se ha añadido otra. OJO con la ruta!!!!
         "../src/assets/images/movie_placeholder.png",
       trailer: document.getElementById("movie-trailer").value,
     };

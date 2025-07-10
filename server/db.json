@@ -148,18 +148,38 @@
       "id": "d653"
     },
     {
-      "id": "a964",
-      "title": "peli super nueva",
-      "director": "sdfsdf",
+      "title": "crear nuevita peli",
+      "director": "",
       "movie_description_es": "",
-      "year": "1904",
+      "year": "",
+      "status": false,
+      "image": "https://pics.filmaffinity.com/The_Batman-449856406-large.jpg",
+      "trailer": "",
+      "id": "a964"
+    },
+    {
+      "title": "nuevapeli 30495",
+      "director": "",
+      "movie_description_es": "",
+      "year": "",
+      "status": false,
+      "image": "https://tse2.mm.bing.net/th/id/OIP.c2k8GwgfBTjLmp6V4XHE9wHaKv?r=0&pid=Api",
+      "trailer": "",
+      "id": "c64b"
+    },
+    {
+      "id": "a824",
+      "title": "oootra",
+      "director": "",
+      "movie_description_es": "",
+      "year": "",
       "status": false,
       "image": "../src/assets/images/movie_placeholder.png",
       "trailer": ""
     },
     {
-      "id": "c64b",
-      "title": "fhdshdgfh",
+      "id": "92d2",
+      "title": "hfxhgchgc",
       "director": "",
       "movie_description_es": "",
       "year": "",
