@@ -29,17 +29,22 @@
                 <button class="btn btn-secondary" onclick="printMovies()">Ver todas</button>
             </div>
         </section>
-        <section>
-            <div>detalle peli</div>
-            <div class="botonera">
-                <button class="btn btn-primary">Editar</button>
-                <button class="btn btn-secondary">Eliminar</button>
+        <!-- modal EDITAR PELÍCULA -->
+        <div id="edit-movie-modal" class="modal">
+            <div class="modal-content">
+                <button class="btn-close" id="btn-close-cancel" aria-label="Cancelar ver pelicula"
+                    onclick="closeModal()">✕</button>
+                <div>detalle peli</div>
+                <div class="botonera">
+                    <button type="submit" class="btn btn-primary" id="btn-save">Guardar cambios</button>
+                </div>
             </div>
-        </section>
-
+        </div>
+        <!-- modal AÑADIR PELÍCULA -->
         <div id="add-movie-modal" class="modal">
             <div class="modal-content">
-                <button class="btn-close" id="btn-close-cancel" aria-label="Cancelar añadir pelicula" onclick="closeModal()">✕</button>
+                <button class="btn-close" id="btn-close-cancel" aria-label="Cancelar añadir pelicula"
+                    onclick="closeModal()">✕</button>
                 <h2>Añade tu película</h2>
                 <form id="movie-form">
                     <div class="formContainer">
@@ -70,11 +75,13 @@
                         </div>
                         <div class="form-group">
                             <label for="movie-poster">URL del póster</label>
-                            <input type="url" id="movie-poster" placeholder="https://images.google.com/..." pattern="https://.*">
+                            <input type="url" id="movie-poster" placeholder="https://images.google.com/..."
+                                pattern="https://.*">
                         </div>
                         <div class="form-group">
                             <label for="movie-trailer">URL del tráiler</label>
-                            <input type="url" id="movie-trailer" placeholder="https://youtube.com/watch?v=..." pattern="https://.*">
+                            <input type="url" id="movie-trailer" placeholder="https://youtube.com/watch?v=..."
+                                pattern="https://.*">
                         </div>
                         <div class="botonera">
                             <button type="submit" class="btn btn-primary" id="btn-save">Guardar película</button>
@@ -83,6 +90,15 @@
                 </form>
             </div>
         </div>
+        <!-- sección MOVIE INFO -->
+        <section id="movie-info">
+            <div>detalle peli</div>
+            <div class="botonera">
+                <button class="btn btn-primary">Editar</button>
+                <button class="btn btn-secondary">Eliminar</button>
+            </div>
+        </section>
+        <!-- sección CARTELERA -->
         <section id="cartelera-section">
             <button class="btn-close close" id="btn-close-top" aria-label="Cerrar cartelera">✕</button>
             <h2>Cartelera</h2>
@@ -98,7 +114,6 @@
             Factoría F5).</p>
         <p class="p-footer">Todos los contenidos tienen fines educativos y de divulgación.</p>
     </footer>
-    <!--<button class="btn" onclick="printMovies()">Cargar Info</button>-->
     <script src="../src/services.js"></script>
 </body>
 

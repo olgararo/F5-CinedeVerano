@@ -47,6 +47,47 @@ function createMovie() {
   openModal(); // Llama a la función existente apra abrir el modal
 }
 
+document.getElementById('movie-form').addEventListener('submit', async function(e) {
+    e.preventDefault();
+    
+    // Recopilar datos del formulario
+    const movieData = {
+        title: document.getElementById('title').value,
+        director: document.getElementById('director').value,
+        movie_description_es: document.getElementById('movie_description_es').value,
+        year: document.getElementById('year').value,
+        status: document.getElementById('status').value === 'visto', // convertir a booleano
+        image: document.getElementById('movie-poster').value || '../src/assets/images/movie_placeholder.png', //  Imagen placeholder por defecto
+        trailer: document.getElementById('movie-trailer').value
+    };
+    
+    try {
+        const response = await fetch('http://localhost:3000/movies', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(movieData)
+        });
+        
+        if (response.ok) {
+            alert('Película añadida correctamente');
+            closeModal();
+            printMovies(); // Recargar la cartelera
+        } else {
+            alert('Error al añadir la película');
+        }
+    } catch (error) {
+        console.error('Error:', error);
+        alert('Error de conexión');
+    }
+});
+
+
+
+
+
+
 //  MODAL FUNCION - gema
 function openModal() {
   document.getElementById("add-movie-modal").style.display = "block";

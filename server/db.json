@@ -7,7 +7,11 @@
       "director": "Daniel Kwan, Daniel Scheinert",
       "movie_description_es": "Evelyn, una inmigrante china en Estados Unidos, se ve envuelta en una aventura interdimensional donde debe salvar el multiverso conectando con las vidas que podría haber vivido.",
       "year": "2022",
-      "genre": ["Adventure", "Comedy", "Sci-Fi"],
+      "genre": [
+        "Adventure",
+        "Comedy",
+        "Sci-Fi"
+      ],
       "image": "../src/assets/images/movie_EverythingEverywhereAllAtOnce.png",
       "status": false,
       "trailer": "https://youtu.be/wxN1T1uxQ2g?si=cTZJJh7shUjQyCpM"
@@ -19,7 +23,10 @@
       "director": "Joe Wright",
       "movie_description_es": "En la Inglaterra del siglo XIX, Elizabeth Bennet debe lidiar con temas de moralidad, educación y matrimonio mientras se enfrenta al orgulloso Sr. Darcy.",
       "year": "2005",
-      "genre": ["Drama", "Romance"],
+      "genre": [
+        "Drama",
+        "Romance"
+      ],
       "image": "../src/assets/images/movie_PrideandPrejudice.png",
       "status": false,
       "trailer": "https://youtu.be/Ur_DIHs92NM?si=LoPxNdyiKDNYwDsO"
@@ -31,7 +38,11 @@
       "director": "David Fincher",
       "movie_description_es": "Cuando Amy desaparece el día de su aniversario, su esposo Nick se convierte en el principal sospechoso. Un thriller psicológico lleno de giros inesperados.",
       "year": "2014",
-      "genre": ["Thriller", "Drama", "Mystery"],
+      "genre": [
+        "Thriller",
+        "Drama",
+        "Mystery"
+      ],
       "image": "../src/assets/images/movie_GoneGirl.png",
       "status": false,
       "trailer": "https://youtu.be/2-_-1nJf8Vg?si=ZQ6J8npBn2iDZF7M"
@@ -43,7 +54,11 @@
       "director": "Chris Buck, Kevin Lima",
       "movie_description_es": "Criado por gorilas en la selva africana, Tarzán debe decidir entre el mundo animal y el humano cuando conoce a Jane Porter.",
       "year": "1999",
-      "genre": ["Animation", "Adventure", "Family"],
+      "genre": [
+        "Animation",
+        "Adventure",
+        "Family"
+      ],
       "image": "../src/assets/images/movie_Tarzan.png",
       "status": false,
       "trailer": "https://youtu.be/HNfiuUXB4o0?si=wQSfuLvjldZzyvhL"
@@ -55,7 +70,11 @@
       "director": "Michel Gondry",
       "movie_description_es": "Joel y Clementine se someten a un procedimiento para borrar los recuerdos de su relación, pero descubren que el amor verdadero es difícil de olvidar.",
       "year": "2004",
-      "genre": ["Drama", "Romance", "Sci-Fi"],
+      "genre": [
+        "Drama",
+        "Romance",
+        "Sci-Fi"
+      ],
       "image": "../src/assets/images/movie_EternalSunshine.png",
       "status": false,
       "trailer": "https://youtu.be/07-QBnEkgXU?si=dv_udtt68ACaaZbC"
@@ -67,7 +86,11 @@
       "director": "Christopher Nolan",
       "movie_description_es": "Batman enfrenta al Joker, un criminal anárquico que siembra el caos en Gotham, obligando al héroe a cuestionar sus límites morales.",
       "year": "2008",
-      "genre": ["Action", "Crime", "Drama"],
+      "genre": [
+        "Action",
+        "Crime",
+        "Drama"
+      ],
       "image": "../src/assets/images/movie_TheDarkKnight.png",
       "status": false,
       "trailer": "https://youtu.be/EXeTwQWrcwY?si=vujdewa5xU5bJeEn"
@@ -79,7 +102,11 @@
       "director": "Quentin Tarantino",
       "movie_description_es": "Django, un esclavo liberado, se une a un cazarrecompensas alemán para rescatar a su esposa de un brutal terrateniente sureño.",
       "year": "2012",
-      "genre": ["Western", "Drama", "Action"],
+      "genre": [
+        "Western",
+        "Drama",
+        "Action"
+      ],
       "image": "../src/assets/images/movie_DjangoUnchained.png",
       "status": false,
       "trailer": "https://youtu.be/2dY7Ad9YhEk?si=98OeB-CUl7d7Znvo"
@@ -91,10 +118,84 @@
       "director": "Bong Joon-ho",
       "movie_description_es": "La familia Kim trama infiltrarse en la adinerada familia Park, desencadenando una serie de eventos inesperados en esta sátira social.",
       "year": "2019",
-      "genre": ["Thriller", "Drama", "Dark Comedy"],
+      "genre": [
+        "Thriller",
+        "Drama",
+        "Dark Comedy"
+      ],
       "image": "../src/assets/images/movie_Parasite.png",
       "status": true,
       "trailer": "https://youtu.be/5xH0HfJHsaY?si=v-TuQQS2aPBPhfZL"
+    },
+    {
+      "id": "2700",
+      "title": "kjkhjk",
+      "director": "",
+      "movie_description_es": "",
+      "year": "",
+      "status": false,
+      "image": "../src/assets/images/movie_placeholder.png",
+      "trailer": ""
+    },
+    {
+      "id": "2ac5",
+      "title": "Scary Movie",
+      "director": "nose",
+      "movie_description_es": "",
+      "year": "2000",
+      "status": false,
+      "image": "src/assets/images/movie_placeholder.png",
+      "trailer": ""
+    },
+    {
+      "id": "6be7",
+      "title": "gru",
+      "director": "gdfgfdg",
+      "movie_description_es": "",
+      "year": "",
+      "status": false,
+      "image": "../assets/images/movie_placeholder.png",
+      "trailer": ""
+    },
+    {
+      "id": "53ab",
+      "title": "gtgregr",
+      "director": "",
+      "movie_description_es": "",
+      "year": "",
+      "status": false,
+      "image": "../assets/images/movie_placeholder.png",
+      "trailer": ""
+    },
+    {
+      "id": "2c6e",
+      "title": "fdsgdsfgfg",
+      "director": "",
+      "movie_description_es": "",
+      "year": "",
+      "status": false,
+      "image": "/src/assets/images/movie_placeholder.png",
+      "trailer": ""
+    },
+    {
+      "id": "4412",
+      "title": "dweewdee",
+      "director": "",
+      "movie_description_es": "",
+      "year": "",
+      "status": false,
+      "image": "./src/assets/images/movie_placeholder.png",
+      "trailer": ""
+    },
+    {
+      "id": "d653",
+      "title": "pruebaplaceholer",
+      "director": "asdsds",
+      "movie_description_es": "",
+      "year": "",
+      "status": false,
+      "image": "../src/assets/images/movie_placeholder.png",
+      "trailer": ""
     }
   ]
 }
