@@ -5,7 +5,7 @@
 
   /* Tipografía e iconos */
   --dusty-orange-title: #d95928; /* Título página */
-  --chocolate-brown-text: #483d3f; /* Texto principal (cuerpo) */
+  --chocolate-brown-text: #4a3a3d; /* Texto principal (cuerpo) */
   --white-text: #ffffff; /* Texto sobre botones oscuros */
   --milk-chocolate: #98551d; /* Iconos: flechas */
 
@@ -61,32 +61,49 @@ section {
 }
 
 /*------------ Sección Añadir película: Formulario-----------*/
-#add-movie-section {
-  display: none;
+
+.modal {
+  display: none; /* Oculto por defecto */
+  position: fixed; /* Fijo en la pantalla */
+  z-index: 1000; /* Encima del resto */
+  left: 0;
+  top: 0;
+  width: 100%; /* Que el fondo oscuro ocupe toda la pantalla */
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Fondo oscuro semitransparente */
+  backdrop-filter: blur(5px); /* Efecto de desenfoque */
 }
 
-#movieForm{
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  gap: 20px;
+.modal-content {
+  background: var(--buttery-yellow);
+  margin: 5% auto;
+  padding: 30px;
+  border-radius: 20px;
+  width: 90%;
+  max-width: 500px;
+  max-height: 80vh;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  position: relative;
+  overflow-y: auto;
 }
 
 .formContainer {
   max-width: 600px;
   margin: 0 auto;
-  background: var(--buttery-yellow);
+  background: white;
   padding: 40px;
-  margin: 2rem;
   border-radius: 8px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
+.form-group {
+  margin-bottom: 20px;
+}
+
 .form-group label {
   display: block;
-  margin-top: 10px;
   margin-bottom: 6px;
-  color: #555;
+  color: var(--milk-chocolate);
   font-weight: 500;
   font-size: 16px;
 }
@@ -101,13 +118,15 @@ section {
   font-size: 16px;
   transition: border-color 0.3s ease;
   background: #fff;
+  box-sizing: border-box;
+  font-family: "Hind", sans-serif;
 }
 
 .form-group input:focus,
 .form-group textarea:focus,
 .form-group select:focus {
   outline: none;
-  border-color:  var(--milk-chocolate);
+  border-color: var(--milk-chocolate);
   box-shadow: 0 0 0 2px rgba(255, 140, 0, 0.15);
 }
 
@@ -116,9 +135,8 @@ section {
   min-height: 80px;
 }
 
-
-
 /* ------------------ Sección Cartelera -------------------- */
+
 #cartelera-section {
   display: none;
 }
@@ -247,7 +265,6 @@ footer {
 .btn-close:active {
   transform: scale(0.95);
 }
-
 
 /* -----------RESPONSIVE------------- */
 

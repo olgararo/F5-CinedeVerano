@@ -16,7 +16,7 @@ async function printMovies() {
   const movieList = movies.map((movie) => {
     return (moviesContainer.innerHTML += `<img src="${movie.image}" alt="${movie.title} movie poster" class="img-cartelera">`);
   });
-
+  carteleraSection.scrollIntoView({ behavior: "smooth" }); //Scroll automático a la cartelera
   return movieList;
 }
 
@@ -35,15 +35,30 @@ btnCloseList.forEach((btnClose) => {
 const btnCancelForm = document.getElementById("btn-close-cancel");
 if (btnCancelForm) {
   btnCancelForm.addEventListener("click", function () {
-    document.getElementById("movieForm").reset();
+    document.getElementById("movie-form").reset();
     console.log("Formulario cancelado");
-    const addMovieSection = document.getElementById("add-movie-section");
-    addMovieSection.style.display = "none";
+    const addMovieModal = document.getElementById("add-movie-modal");
+    addMovieModal.style.display = "none";
   });
 }
 
 // AÑADIR PELÍCULA
 function createMovie() {
-  const addMovieSection = document.getElementById("add-movie-section");
-  addMovieSection.style.display = "block";
+  openModal(); // Llama a la función existente apra abrir el modal
 }
+
+//  MODAL FUNCION - gema
+function openModal() {
+  document.getElementById("add-movie-modal").style.display = "block";
+}
+function closeModal() {
+  document.getElementById("add-movie-modal").style.display = "none";
+  document.getElementById("movie-form").reset();
+}
+// ----Cerrar modal al hacer clic fuera
+window.onclick = function (event) {
+  const modal = document.getElementById("add-movie-modal");
+  if (event.target == modal) {
+    closeModal();
+  }
+};
