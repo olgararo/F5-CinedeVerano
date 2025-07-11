@@ -166,36 +166,6 @@
       "image": "https://tse2.mm.bing.net/th/id/OIP.c2k8GwgfBTjLmp6V4XHE9wHaKv?r=0&pid=Api",
       "trailer": "",
       "id": "c64b"
-    },
-    {
-      "id": "a824",
-      "title": "oootra",
-      "director": "",
-      "movie_description_es": "",
-      "year": "",
-      "status": false,
-      "image": "../src/assets/images/movie_placeholder.png",
-      "trailer": ""
-    },
-    {
-      "title": "hfxhgchgc",
-      "director": "",
-      "movie_description_es": "",
-      "year": "",
-      "status": false,
-      "image": "../src/assets/images/movie_placeholder.png",
-      "trailer": "",
-      "id": "92d2"
-    },
-    {
-      "title": "tyjtyjtttttttttt",
-      "director": "",
-      "movie_description_es": "",
-      "year": "",
-      "status": false,
-      "image": "../src/assets/images/movie_placeholder.png",
-      "trailer": "",
-      "id": "f966"
     }
   ]
 }
