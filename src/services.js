@@ -1,3 +1,22 @@
+/*
+Resumen de la Organización CRUD:
+🟢 CREATE (Crear):
+createMovie() - Abre el modal para crear
+Event listener del formulario - Maneja crear Y actualizar
+
+🟢 READ (Leer):
+getMovies() - Obtiene datos de la API
+printMovies() - Muestra la cartelera
+showMovieInfo() - Muestra detalles de una película
+
+🟢 UPDATE (Actualizar):
+editMovie() - Abre el modal con datos prellenados
+Event listener del formulario - Maneja crear Y actualizar
+
+🟢 DELETE (Eliminar):
+deleteMovie() - Elimina la película
+*/
+
 // READ Método GET
 async function getMovies() {
   const response = await fetch("http://localhost:3000/movies");
@@ -96,7 +115,7 @@ function closeMovieInfo() {
   selectedMovie = null;
 }
 
-// Función para editar película
+// --------------------EDITAR PELÍCULA------
 function editMovie() {
   if (!selectedMovie) return;
 
@@ -174,10 +193,16 @@ if (btnCancelForm) {
   });
 }
 
+// -------------------------AÑADIR PELÍCULA--------------
 // AÑADIR PELÍCULA
 function createMovie() {
-  cleanModal(); //Limpiar el formulario
-  openModal(); // Llama a la función existente para abrir el modal
+  cleanModal(); // Limpiar el formulario
+  
+  // Cambiar título a "Añadir película"
+  document.querySelector("#movie-modal h2").textContent = "Añadir película";
+  selectedMovie = null; // Es para indicar que estamos creando, no editando, al no seleccionar nada
+  
+  openModal(); // Abrir el modal
 }
 
 document
