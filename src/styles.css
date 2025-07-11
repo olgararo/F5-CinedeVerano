@@ -34,6 +34,12 @@
   --blush-nude: #f5cdca; /* Dark Comedy */
 }
 
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
 body {
   background-color: var(--vanilla-cream-bg);
   color: var(--chocolate-brown-text);
@@ -42,10 +48,14 @@ body {
   font-style: normal;
   margin: 0 auto;
   padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Asegura que el body ocupe toda la altura de la ventana */
 }
 
 main {
   padding: 2rem 6rem;
+  flex: 1; 
 }
 
 section {
@@ -58,6 +68,15 @@ section {
   border-radius: 20px;
   padding: 2rem;
   margin-bottom: 2.5rem;
+}
+
+footer {
+  padding: 2rem 1rem;
+  text-align: center;
+  margin-top: auto; /* Empuja el footer hacia abajo */
+  /* Opcional: puedes añadir un fondo para que se vea mejor */
+  background-color: rgba(255, 244, 224, 0.8);
+  border-top: 1px solid rgba(152, 85, 29, 0.1);
 }
 
 /* 📝 Tipografía */
@@ -83,11 +102,6 @@ h2 {
   box-sizing: border-box;
 }
 
-footer {
-  padding: 2rem 1rem;
-  text-align: center;
-  margin-top: auto; /* Empuja el footer hacia abajo */
-}
 .p-footer {
   font-size: 0.7rem;
   font-family: "Bodoni Moda", serif;
