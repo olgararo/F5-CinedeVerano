@@ -17,20 +17,95 @@ Event listener del formulario - Maneja crear Y actualizar
 deleteMovie() - Elimina la película
 */
 
-// READ Método GET
+// ============================================
+// VARIABLES GLOBALES
+// ============================================
+let selectedMovie = null;
+const moviesContainer = document.getElementById("cartelera");
+const carteleraSection = document.getElementById("cartelera-section");
+
+// ============================================
+// CRUD: CREATE (Crear películas) - Botón "Añadir película"
+// ============================================
+
+// Función para abrir modal en modo crear
+function createMovie() {
+  cleanModal(); // Limpiar el formulario
+  document.querySelector("#movie-modal h2").textContent = "Añadir película"; // Cambiar título a "Añadir película"
+  selectedMovie = null; // Indicar que estamos creando, no editando, al no seleccionar ninguna película
+  openModal(); // Abrir el modal
+}
+
+// Gestionar envío del formulario (crear o actualizar)
+document
+  .getElementById("movie-form")
+  .addEventListener("submit", async function (e) {
+    e.preventDefault();
+
+    // Recopilar datos del formulario
+    const movieData = {
+      title: document.getElementById("title").value,
+      director: document.getElementById("director").value,
+      movie_description_es: document.getElementById("movie_description_es")
+        .value,
+      year: document.getElementById("year").value,
+      status: document.getElementById("status").value === "visto", // convertir a booleano
+      image:
+        document.getElementById("movie-poster").value ||
+        "../src/assets/images/movie_placeholder.png", // En caso de no haber imágenes, pone la imagen placeholder que he diseñado y subido al repo
+      trailer: document.getElementById("movie-trailer").value,
+    };
+
+    try {
+      // Determinar si es una actualización o creación nueva
+      const isEditing = selectedMovie !== null;
+      const url = isEditing
+        ? `http://localhost:3000/movies/${selectedMovie.id}`
+        : "http://localhost:3000/movies";
+      const method = isEditing ? "PUT" : "POST";
+
+      const response = await fetch(url, {
+        method: method,
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(movieData),
+      });
+
+      if (response.ok) {
+        alert(
+          isEditing
+            ? "Película actualizada correctamente"
+            : "Película añadida correctamente"
+        );
+        closeModal();
+        closeMovieInfo();
+        printMovies(); // Recargar la cartelera
+      } else {
+        alert(
+          isEditing
+            ? "Error al actualizar la película"
+            : "Error al añadir la película"
+        );
+      }
+    } catch (error) {
+      console.error("Error:", error);
+      alert("Error de conexión");
+    }
+  });
+
+// ============================================
+// CRUD: READ (Leer/Obtener películas) - Traer las pelis disponibles del json. y mostrarlas todas o una específica
+// ============================================
+
+// Obtener películas de la API
 async function getMovies() {
   const response = await fetch("http://localhost:3000/movies");
   const moviedata = await response.json();
   return moviedata;
 }
 
-// Variable general para almacenar la película seleccionada
-let selectedMovie = null;
-
-// IMPRIMIR
-let moviesContainer = document.getElementById("cartelera");
-const carteleraSection = document.getElementById("cartelera-section");
-
+// Mostrar todas las películas en la cartelera
 async function printMovies() {
   const movies = await getMovies();
   carteleraSection.style.display = "block";
@@ -54,7 +129,7 @@ async function printMovies() {
   carteleraSection.scrollIntoView({ behavior: "smooth" }); //Scroll automático a la cartelera
 }
 
-// Función para mostrar información de la película
+// Mostrar información detallada de una película
 function showMovieInfo(movie) {
   selectedMovie = movie;
   const movieInfoSection = document.getElementById("movie-info");
@@ -99,7 +174,6 @@ function showMovieInfo(movie) {
       }
     </div>
   `;
-  //el interrogante de L57 y L61 es un operador de If...else=> condición ? valor_si_verdadero : valor_si_falso
 
   // Reemplazar el contenido placeholder
   movieDetailsDiv.innerHTML = movieDetails;
@@ -109,15 +183,13 @@ function showMovieInfo(movie) {
   movieInfoSection.scrollIntoView({ behavior: "smooth" });
 }
 
-// Función para cerrar la información de la película
-function closeMovieInfo() {
-  document.getElementById("movie-info").style.display = "none";
-  selectedMovie = null;
-}
+// ============================================
+// CRUD: UPDATE (Actualizar películas) - Si ahy alguna película seleccionada, prerrellena el form con la info disponible
+// ============================================
 
-// --------------------EDITAR PELÍCULA------
+// Función para editar película (prellenar formulario)
 function editMovie() {
-  if (!selectedMovie) return;
+  if (!selectedMovie) return; //Si no hay película seleccionada, para aquí la función
 
   // Prellenar el formulario con los datos de la película
   document.getElementById("title").value = selectedMovie.title || "";
@@ -132,19 +204,19 @@ function editMovie() {
   document.getElementById("movie-trailer").value = selectedMovie.trailer || "";
 
   // Cambiar el modal a modo edición
-  const modal = document.getElementById("movie-modal");
-  const modalTitle = modal.querySelector("h2");
-  if (modalTitle) {
-    modalTitle.textContent = "Editar película";
-  }
+  document.querySelector("#movie-modal h2").textContent = "Editar película";
 
   // Mostrar el modal de edición
-  modal.style.display = "block";
+  document.getElementById("movie-modal").style.display = "block";
 }
+
+// ============================================
+// CRUD: DELETE (Eliminar películas)
+// ============================================
 
 // Función para eliminar película
 async function deleteMovie() {
-  if (!selectedMovie) return;
+  if (!selectedMovie) return; //Si no hay película seleccionada, para aquí la función
 
   if (
     confirm(`¿Estás seguro de que quieres eliminar "${selectedMovie.title}"?`)
@@ -171,16 +243,32 @@ async function deleteMovie() {
   }
 }
 
-// Botones cerrar cartelera
-const btnCloseList = document.querySelectorAll(".close");
-btnCloseList.forEach((btnClose) => {
-  if (btnClose) {
-    btnClose.addEventListener("click", function () {
-      const carteleraSection = document.getElementById("cartelera-section");
-      carteleraSection.style.display = "none";
-    });
-  }
-});
+// ============================================
+// FUNCIONES DE INTERFAZ - MODAL Formulario
+// ============================================
+
+// Funciones del modal
+function openModal() {
+  document.getElementById("movie-modal").style.display = "block";
+}
+
+function closeModal() {
+  document.getElementById("movie-modal").style.display = "none";
+}
+
+function cleanModal() {
+  document.getElementById("movie-form").reset();
+}
+
+// Función para cerrar la información de la película
+function closeMovieInfo() {
+  document.getElementById("movie-info").style.display = "none";
+  selectedMovie = null;
+}
+
+// ============================================
+// EVENT LISTENERS - clicks en botones de cerrar, cancelar o clicar fuera
+// ============================================
 
 // Botón cancelar añadir película
 const btnCancelForm = document.getElementById("btn-close-cancel");
@@ -193,87 +281,16 @@ if (btnCancelForm) {
   });
 }
 
-// -------------------------AÑADIR PELÍCULA--------------
-// AÑADIR PELÍCULA
-function createMovie() {
-  cleanModal(); // Limpiar el formulario
-  
-  // Cambiar título a "Añadir película"
-  document.querySelector("#movie-modal h2").textContent = "Añadir película";
-  selectedMovie = null; // Es para indicar que estamos creando, no editando, al no seleccionar nada
-  
-  openModal(); // Abrir el modal
-}
-
-document
-  .getElementById("movie-form")
-  .addEventListener("submit", async function (e) {
-    e.preventDefault();
-
-    // Recopilar datos del formulario
-    const movieData = {
-      title: document.getElementById("title").value,
-      director: document.getElementById("director").value,
-      movie_description_es: document.getElementById("movie_description_es")
-        .value,
-      year: document.getElementById("year").value,
-      status: document.getElementById("status").value === "visto", // convertir a booleano
-      image:
-        document.getElementById("movie-poster").value || // imagen placeholder si no se ha añadido otra. OJO con la ruta!!!!
-        "../src/assets/images/movie_placeholder.png",
-      trailer: document.getElementById("movie-trailer").value,
-    };
-
-    try {
-      // Determinar si es una actualización o creación nueva
-      const isEditing = selectedMovie !== null;
-      const url = isEditing
-        ? `http://localhost:3000/movies/${selectedMovie.id}`
-        : "http://localhost:3000/movies";
-      const method = isEditing ? "PUT" : "POST";
-
-      const response = await fetch(url, {
-        method: method,
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(movieData),
-      });
-
-      if (response.ok) {
-        alert(
-          isEditing
-            ? "Película actualizada correctamente"
-            : "Película añadida correctamente"
-        );
-        closeModal();
-        closeMovieInfo();
-        printMovies(); // Recargar la cartelera
-      } else {
-        alert(
-          isEditing
-            ? "Error al actualizar la película"
-            : "Error al añadir la película"
-        );
-      }
-    } catch (error) {
-      console.error("Error:", error);
-      alert("Error de conexión");
-    }
-  });
-
-// MODAL FUNCIONES
-function openModal() {
-  document.getElementById("movie-modal").style.display = "block";
-}
-
-function closeModal() {
-  document.getElementById("movie-modal").style.display = "none";
-}
-
-function cleanModal() {
-  document.getElementById("movie-form").reset();
-}
+// Botones cerrar cartelera
+const btnCloseList = document.querySelectorAll(".close");
+btnCloseList.forEach((btnClose) => {
+  if (btnClose) {
+    btnClose.addEventListener("click", function () {
+      const carteleraSection = document.getElementById("cartelera-section");
+      carteleraSection.style.display = "none";
+    });
+  }
+});
 
 // Cerrar modal al hacer clic fuera del formulario
 window.onclick = function (event) {
