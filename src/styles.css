@@ -432,13 +432,83 @@ footer {
   transform: scale(0.95);
 }
 
-/* -----------RESPONSIVE------------- */
+/* ---------------------------------------------------------RESPONSIVE---------------------------------------------------------- */
 
-/* Para pantallas más pequeñas */
+/* Responsive para móviles */
+
 @media (max-width: 768px) {
+  body {
+    padding: 0.5rem; /* Reducir padding del body */
+  }
+
+  main {
+    padding: 1rem; /* Reducir padding del main para móviles */
+  }
+
+  section {
+    margin: 0 0 1rem 0; /* Eliminar márgenes laterales y reducir el inferior */
+    padding: 1rem; /* Reducir padding interno */
+  }
+
+  .title {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+  }
+
+  h2 {
+    font-size: 2rem; /* Reducir tamaño de fuente */
+    margin: 0 0 1rem 0;
+    word-wrap: break-word; /* Permitir que las palabras se rompan */
+    overflow-wrap: break-word; /* Soporte adicional */
+    hyphens: auto; /* Guiones automáticos */
+    line-height: 1.2; /* Reducir altura de línea */
+  }
+
   .cartelera {
-    grid-template-columns: repeat(2, 1fr); /* 2 columnas en móviles */
+        display: flex;
+        justify-content: center; /* Centra las imágenes horizontalmente */
+        flex-wrap: wrap; /* Permite que las imágenes se ajusten en varias líneas si es necesario */
+        margin: 0;
+    }
+    .cartelera img {
+        max-width: 100%; /* Asegura que las imágenes no excedan el ancho del contenedor */
+        height: auto; /* Mantiene la proporción de las imágenes */
+        margin: 10px; /* Espaciado entre imágenes */
+    }
+
+  .movie-header {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
     gap: 1rem;
+  }
+
+  #movie-info {
+    max-width: 100%; /* Usa todo el ancho en móviles */
+    margin: 0 10px; /* Pequeños márgenes laterales */
+  }
+
+  .movie-poster-detail {
+    width: 120px;
+  }
+
+  .movie-info-text h2 {
+    font-size: 1.5rem;
+    text-align: center;
+  }
+
+  .movie-info-text h3 {
+    font-size: 1.2rem;
+  }
+
+  /* Botones responsive */
+  .botonera {
+    display: flex;
+    justify-content: center; /* Centra los botones horizontalmente */
+    flex-wrap: wrap; /* Permite que los botones se ajusten en varias líneas si es necesario */
+  }
+  .botonera button {
+    margin: 5px; /* Espaciado entre botones */
   }
 }
 
@@ -453,34 +523,5 @@ footer {
   .formContainer {
     padding: 30px 20px;
     margin: 0 10px;
-  }
-}
-
-/* Responsive para movie-info */
-@media (max-width: 768px) {
-
-    #movie-info {
-    max-width: 100%; /* Usa todo el ancho en móviles */
-    margin: 0 10px; /* Pequeños márgenes laterales */
-  }
-  
-  .movie-header {
-  flex-direction: column;
-    align-items: center;
-    text-align: center;
-    gap: 1rem;
-  }
-
-  .movie-poster-detail {
-    width: 150px;
-  }
-
-  .movie-info-text h2 {
-    font-size: 1.5rem;
-    text-align: center;
-  }
-
-  .movie-info-text h3 {
-    font-size: 1.2rem;
   }
 }
