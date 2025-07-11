@@ -96,7 +96,25 @@ footer {
   margin: 0;
 }
 
+/*------------Portada -------------*/
 
+#portada {
+  margin: 0 auto; /* centra horizontalmente el bloque dentro del main*/
+  max-width: 800px; /* Aumentado un poco el ancho máximo */
+  width: 100%; /* Asegura que use todo el ancho disponible */
+  box-sizing: border-box; /* Incluye padding y border en el ancho total */
+  overflow: hidden; /* Evita que el contenido se salga */
+  align-items: center;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.img-portada {
+  max-height: 400px;
+  max-width: 100%;
+  border-radius: 20px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
 
 /*------------ Sección Añadir película: Formulario-----------*/
 
@@ -411,16 +429,16 @@ footer {
   }
 
   .cartelera {
-        display: flex;
-        justify-content: center; /* Centra las imágenes horizontalmente */
-        flex-wrap: wrap; /* Permite que las imágenes se ajusten en varias líneas si es necesario */
-        margin: 0;
-    }
-    .cartelera img {
-        max-width: 100%; /* Asegura que las imágenes no excedan el ancho del contenedor */
-        height: auto; /* Mantiene la proporción de las imágenes */
-        margin: 10px; /* Espaciado entre imágenes */
-    }
+    display: flex;
+    justify-content: center; /* Centra las imágenes horizontalmente */
+    flex-wrap: wrap; /* Permite que las imágenes se ajusten en varias líneas si es necesario */
+    margin: 0;
+  }
+  .cartelera img {
+    max-width: 100%; /* Asegura que las imágenes no excedan el ancho del contenedor */
+    height: auto; /* Mantiene la proporción de las imágenes */
+    margin: 10px; /* Espaciado entre imágenes */
+  }
 
   .movie-header {
     flex-direction: column;
