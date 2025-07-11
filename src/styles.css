@@ -117,12 +117,12 @@ footer {
 
   &::scroll-button(right) {
     position-area: inline-end center;
-    content: 'arrow_forward' / 'Next';
+    content: "arrow_forward" / "Next";
   }
 
   &::scroll-button(left) {
     position-area: inline-start center;
-    content: 'arrow_back' / 'Previous';
+    content: "arrow_back" / "Previous";
   }
 }
 
@@ -143,7 +143,7 @@ footer {
 
   > .carousel__slide {
     &::scroll-marker {
-      content: '' / attr(data-label);
+      content: "" / attr(data-label);
     }
 
     &::scroll-marker:target-current {
@@ -151,7 +151,6 @@ footer {
     }
   }
 }
-
 
 /*------------ Sección Añadir película: Formulario-----------*/
 
@@ -195,10 +194,7 @@ footer {
 .formContainer {
   max-width: 600px;
   margin: 0 auto;
-  background: color-mix(
-    in srgb,
-    var(--pure-white-block) 70%,
-    transparent);
+  background: color-mix(in srgb, var(--pure-white-block) 70%, transparent);
   padding: 40px;
   border-radius: 8px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
@@ -274,18 +270,22 @@ footer {
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Sombra más pronunciada */
 }
 
-
 /* ---------Sección movie-info ------------*/
 #movie-info {
   margin: 0 auto; /* centra horizontalmente el bloque dentro del main*/
   display: none; /* Oculta por defecto */
-  max-width: 600px;
-  
+  max-width: 800px; /* Aumentado un poco el ancho máximo */
+  width: 100%; /* Asegura que use todo el ancho disponible */
+  box-sizing: border-box; /* Incluye padding y border en el ancho total */
+  overflow: hidden; /* Evita que el contenido se salga */
 }
 
 .movie-details {
   border-radius: 12px;
   padding: 2rem;
+  box-sizing: border-box; /* Importante para que el padding no añada ancho extra */
+  word-wrap: break-word; /* Rompe palabras largas */
+  overflow-wrap: break-word; /* Soporte adicional para navegadores */
 }
 
 .movie-header {
@@ -293,6 +293,7 @@ footer {
   gap: 2rem;
   margin-bottom: 1.5rem;
   align-items: flex-start;
+  flex-wrap: wrap; /* Permite que se adapte en pantallas pequeñas */
 }
 
 .movie-poster-detail {
@@ -300,17 +301,22 @@ footer {
   height: auto;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  flex-shrink: 0;
+  flex-shrink: 0; /* No se reduce el tamaño */
+  max-width: 100%; /* No se sale del contenedor */
 }
 
 .movie-info-text {
   flex: 1;
+  min-width: 0; /* Permite que el texto se ajuste */
+  word-wrap: break-word; /* Rompe palabras largas */
 }
 
 .movie-info-text h2 {
   margin: 0 0 0.5rem 0;
   font-size: 2rem;
   color: var(--dusty-orange-title);
+  word-wrap: break-word; /* Para títulos muy largos */
+  hyphens: auto; /* Añade guiones automáticamente */
 }
 
 .movie-info-text h3 {
@@ -319,18 +325,29 @@ footer {
   color: var(--chocolate-brown-text);
   font-style: italic;
   text-align: center;
+  word-wrap: break-word;
+  hyphens: auto;
 }
 
 .movie-info-text p {
   margin: 0.5rem 0;
   line-height: 1.6;
-  color: var(--chocolate-brown-text)
+  color: var(--chocolate-brown-text);
+  word-wrap: break-word;
+  overflow-wrap: break-word;
 }
 
 .movie-description {
   margin-top: 1rem;
   padding-top: 1rem;
   border-top: 1px solid #eee;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+.movie-description p {
+  text-align: justify; /* Justifica el texto para mejor apariencia */
+  hyphens: auto; /* Añade guiones automáticamente */
 }
 
 .movie-trailer {
@@ -341,14 +358,13 @@ footer {
   color: var(--burnt-orange-primary);
   text-decoration: none;
   font-weight: bold;
+  word-break: break-all; /* Rompe URLs largas */
 }
 
 .movie-trailer a:hover {
   color: var(--sunset-orange-accent);
   text-decoration: underline;
 }
-
-
 
 /* ------------------🎮 Botones-------------------- */
 .botonera {
@@ -416,7 +432,6 @@ footer {
   transform: scale(0.95);
 }
 
-
 /* -----------RESPONSIVE------------- */
 
 /* Para pantallas más pequeñas */
@@ -443,20 +458,28 @@ footer {
 
 /* Responsive para movie-info */
 @media (max-width: 768px) {
-  .movie-header {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
+
+    #movie-info {
+    max-width: 100%; /* Usa todo el ancho en móviles */
+    margin: 0 10px; /* Pequeños márgenes laterales */
   }
   
+  .movie-header {
+  flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 1rem;
+  }
+
   .movie-poster-detail {
     width: 150px;
   }
-  
+
   .movie-info-text h2 {
     font-size: 1.5rem;
+    text-align: center;
   }
-  
+
   .movie-info-text h3 {
     font-size: 1.2rem;
   }

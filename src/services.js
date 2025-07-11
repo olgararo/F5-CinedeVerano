@@ -33,6 +33,7 @@ function createMovie() {
   cleanModal(); // Limpiar el formulario
   document.querySelector("#movie-modal h2").textContent = "Añadir película"; // Cambiar título a "Añadir película"
   selectedMovie = null; // Indicar que estamos creando, no editando, al no seleccionar ninguna película
+  closeMovieInfo(); // Cerrar la sección movie-info si está abierta
   openModal(); // Abrir el modal
 }
 
